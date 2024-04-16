@@ -8,16 +8,16 @@ public class WriteName : MonoBehaviour
     public Font fuente;
     private string nombre = "";
 
-    void /// <summary>
-    /// OnGUI is called for rendering and handling GUI events.
-    /// This function can be called multiple times per frame (one call per event).
-    /// </summary>
-    void OnGUI()
-    {
-        GUI.skin.font = fuente;
-        GUI.contentColor = Color.white;
-        nombre = GUI.TextField(new Rect(219,100,100,20),nombre, 11);
-    }
+    // void /// <summary>
+    // /// OnGUI is called for rendering and handling GUI events.
+    // /// This function can be called multiple times per frame (one call per event).
+    // /// </summary>
+    // void OnGUI()
+    // {
+    //     GUI.skin.font = fuente;
+    //     GUI.contentColor = Color.white;
+    //     nombre = GUI.TextField(new Rect(219,100,100,20),nombre, 11);
+    // }
     void Start()
     {
         
