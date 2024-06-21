@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: InterfaceState
   m_EditorClassIdentifier: 
   selectedInterfaceTab: 1
-  gridExists: 0
+  gridExists: 1
   previousBuildToolIndex: -1
   selectedBuildToolIndex: -1
-  selectedPrefabIndex: -1
+  selectedPrefabIndex: 4
   prefabPath: Assets/FSP/Modular Pixel Forest/Prefabs
   selectedPrefabPaletteFolderIndex: 0
   prefabPaletteColumnCount: 3
