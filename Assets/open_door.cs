@@ -9,6 +9,7 @@ public class open_door : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         door.Play("door_2_open");
+        GetComponent<AudioSource>().Play();
     }
 
     private void OnTriggerExit(Collider other)
