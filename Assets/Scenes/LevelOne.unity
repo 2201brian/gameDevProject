@@ -4755,7 +4755,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 93f7403776a6ef440ad93497f18ca0ad, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.103
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5089,8 +5089,8 @@ Transform:
   m_GameObject: {fileID: 229799283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5295649, y: -1.9350729, z: -30.305}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.49799, y: -1.982, z: -31.017}
+  m_LocalScale: {x: 0.94034696, y: 0.94034696, z: 0.94034696}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 897142269}
@@ -11396,7 +11396,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 0.1493876, z: 1}
   m_Center: {x: 0, y: -0.4253062, z: 0}
@@ -16450,8 +16450,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.85, y: 6.73, z: 4.04}
-  m_Center: {x: 0, y: 3.25, z: 1.21}
+  m_Size: {x: 1.85, y: 6.81, z: 4.04}
+  m_Center: {x: 0, y: 3.38, z: 1.21}
 --- !u!54 &897142274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16516,10 +16516,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   groundDrag: 5
-  jumpForce: 12
-  jumpCoolDown: 0.25
-  airMultiplier: 0.2
+  jumpForce: 15
+  jumpCoolDown: 0.52
+  airMultiplier: 0.32
   jumpKey: 32
+  shootKey: 324
+  attackKey: 323
+  leftSlide: 97
+  rightSlide: 100
   playerHeight: 6.73
   whatisGround:
     serializedVersion: 2

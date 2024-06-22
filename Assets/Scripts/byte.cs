@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private float turnSpeed = 45f;
 
-    private bool isJumping = false;
+    // private bool isJumping = false;
 
 
     private Animator animator;

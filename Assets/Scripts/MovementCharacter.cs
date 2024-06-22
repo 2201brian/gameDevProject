@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class MovementCharacter : MonoBehaviour
 {   
@@ -14,6 +16,11 @@ public class MovementCharacter : MonoBehaviour
     bool readyToJump;
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode shootKey = KeyCode.Mouse1;
+    public KeyCode attackKey = KeyCode.Mouse0;
+
+    public KeyCode leftSlide = KeyCode.A;
+    public KeyCode rightSlide = KeyCode.D;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -27,12 +34,15 @@ public class MovementCharacter : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+    private Animator animator;
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -50,11 +60,18 @@ public class MovementCharacter : MonoBehaviour
         {
             rb.drag = 0;
         }
+
+        //Check if character fall down
+        if(transform.position.y <= -7.5f)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     private void FixedUpdate() 
     {
         MovePlayer();
+        HandleRunAnimation();
     }
 
     private void MyInput()
@@ -69,6 +86,16 @@ public class MovementCharacter : MonoBehaviour
             Jump();
 
             Invoke(nameof(ResetJump), jumpCoolDown);
+        }
+
+        if(Input.GetKey(attackKey))
+        {
+            HitAnimationTriggerHandler();
+        }
+
+        if(Input.GetKey(shootKey))
+        {
+            ShootAnimationTriggerHandler();
         }
     }
 
@@ -99,10 +126,27 @@ public class MovementCharacter : MonoBehaviour
     {
         rb.velocity =  new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        animator.SetTrigger("isJumping"); 
     }
 
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    private void HandleRunAnimation()
+    {
+
+        animator.SetFloat("Speed", rb.velocity.z);
+    }
+
+    private void HitAnimationTriggerHandler()
+    {
+        animator.SetTrigger("isHitting");
+    }
+
+    private void ShootAnimationTriggerHandler()
+    {
+        animator.SetTrigger("isShooting");
     }
 }
